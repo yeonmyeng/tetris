@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>테트리스</title>
+  <style>
+    body {
+      background: #111827;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+    canvas {
+      background: #1f2937;
+      border: 1px solid #374151;
+    }
+    .side {
+      width: 220px;
+    }
+    button, select {
+      margin-top: 8px;
+      width: 100%;
+      height: 36px;
+    }
+    .box {
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="board"></canvas>
+
+  <div class="side">
+    <div class="box">
+      <div>점수: <span id="score">0</span></div>
+      <div>라인: <span id="lines">0</span></div>
+      <div>레벨: <span id="level">1</span></div>
+      <div>상태: <span id="status">대기</span></div>
+    </div>
+
+    <div class="box">
+      <div>다음 블록</div>
+      <canvas id="next" width="120" height="120"></canvas>
+      <div id="nextHint"></div>
+    </div>
+
+    <div class="box">
+      <div>홀드</div>
+      <canvas id="hold" width="120" height="120"></canvas>
+      <div id="holdHint"></div>
+    </div>
+
+    <div class="box">
+      <select id="difficulty">
+        <option value="normal">보통</option>
+        <option value="hard">어려움</option>
+        <option value="insane">지옥</option>
+      </select>
+      <button id="startBtn">시작</button>
+      <button id="pauseBtn">일시정지</button>
+      <button id="resetBtn">리셋</button>
+    </div>
+  </div>
+
+  <script src="tetris.js" defer></script>
+</body>
+</html>
